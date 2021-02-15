@@ -181,7 +181,7 @@ const Update = ({ match, setAlert }) => {
         <div className="fields">
 
           <div className="field">
-            <label>현재 Price</label>
+            <label style={currentPrice === 0 ? { color: 'red' } : null}>현재 Price</label>
             <input type="text" name="currentPrice" value={currentPrice} onChange={onChange} required />
           </div>
 

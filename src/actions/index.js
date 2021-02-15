@@ -1,18 +1,24 @@
 import { client } from "../apis";
 
 import {
-  ALERT_OFF, ALERT_ON, CURRENCY, SIGN_IN, SIGN_OUT
+  ALERT_OFF, ALERT_ON, CURRENCY, SIGN_IN, SIGN_OUT, SIGN_UP
 
 } from './types'
 
 
 
-export const setCurrency = (currency) => {
+export const setCurrency = () => {
 
-  return ({
-    type: CURRENCY,
-    payload: currency
-  })
+  return (dispatch, getState) => {
+
+    client.get('/api/stockcodecurrency').then(({ data }) => {
+      console.log(data);
+      dispatch({ type: CURRENCY, payload: data })
+    }).catch((err) => {
+      console.log(err.response);
+    })
+
+  }
 
 }
 
@@ -26,6 +32,7 @@ export const signIn = (login) => {
       })
       console.log(data)
       dispatch({ type: SIGN_IN, payload: data })
+      dispatch(setCurrency())
     } catch (err) {
       //  console.log(err.response.data.errors[0].message);
       console.log(err);
@@ -43,7 +50,7 @@ export const signUp = (login) => {
         email, password, name, provider
       })
       //  console.log(data)
-      dispatch({ type: SIGN_IN, payload: resp.data })
+      dispatch({ type: SIGN_UP, payload: resp.data })
     } catch (err) {
       //     console.log(err.response.data.errors[0].message);
       err.response.data.errors.map(error => dispatch(setAlert(error.message)))

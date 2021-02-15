@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import {
   SIGN_IN,
+  SIGN_UP,
   SIGN_OUT,
   ALERT_OFF, ALERT_ON, CURRENCY
 } from '../actions/types'
@@ -15,6 +16,8 @@ export const authReducer = (state = INITIAL_STATE, action) => {
 
   switch (action.type) {
     case SIGN_IN:
+      return { ...state, isSignedIn: true, user: action.payload, }
+    case SIGN_UP:
       return { ...state, isSignedIn: true, user: action.payload, }
     case SIGN_OUT:
       return { ...state, isSignedIn: false, user: null, }
@@ -40,11 +43,7 @@ export const alertReducer = (state = INITIAL_ALERT_STATE, action) => {
 
 }
 
-const INITIAL_CURRENCY_STATE = {
-  USD: 1,
-  CNY: 1,
-  KRW: 1
-}
+const INITIAL_CURRENCY_STATE = {}
 export const currencyReducer = (state = INITIAL_CURRENCY_STATE, action) => {
   if (action.type === CURRENCY) {
     return action.payload

@@ -11,7 +11,7 @@ import Routes from "../routes/routes";
 export const App = () => {
 
   return (
-    <div className="ui container" style={{ marginTop: '10px' }}>
+    <div >
       <BrowserRouter>
         <Route component={Routes} />
       </BrowserRouter>

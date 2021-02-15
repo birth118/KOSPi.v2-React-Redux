@@ -112,7 +112,7 @@ const Transact = ({ match, setAlert }) => {
   }
 
   return (
-    <div>
+    <div >
 
       <div>
         <h3 className="ui dividing header"> Transaction </h3>
@@ -120,6 +120,7 @@ const Transact = ({ match, setAlert }) => {
         <div className="grid stackable ui">
           <div className="row ui">
             {/* TRANSACTIION form*/}
+
 
             <div className="ten wide column">
 
@@ -229,6 +230,8 @@ const Transact = ({ match, setAlert }) => {
 
 
             </div>
+
+
 
             {/* SUMMARY Table */}
             <div className="six wide column">

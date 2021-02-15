@@ -14,19 +14,19 @@ const PrivateRoute = ({ auth: { isSignedIn, loading }, component: Component, ...
 
     <div>
 
+      <div className="ui container" style={{ marginTop: '10px' }} >
+        <Nav />
+        <Route
+          {...rest}
+          render={(props) => {
+            // console.log(props);
+            // console.log(isSignedIn);
 
-      <Nav />
-      <Route
-        {...rest}
-        render={(props) => {
-          // console.log(props);
-          // console.log(isSignedIn);
+            return (isSignedIn ? <Component {...props} /> : <Redirect to="/" />)
+          }}
 
-          return (isSignedIn ? <Component {...props} /> : <Redirect to="/" />)
-        }}
-
-      />
-
+        />
+      </div>
 
     </div >
   )
