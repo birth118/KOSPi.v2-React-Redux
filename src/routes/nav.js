@@ -69,7 +69,9 @@ const Nav = () => {
 
             <li className="nav-item ">
 
-              <Link className="nav-link" target="_blank" to={`/Transactall/${new Date().getFullYear()}0101`}> History </Link>
+              <Link className="nav-link"
+                // target="_blank" 
+                to={`/Transactall/${new Date().getFullYear()}0101`}> History </Link>
             </li>
 
 

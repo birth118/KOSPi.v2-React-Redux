@@ -80,9 +80,8 @@ const Signup = ({ isSignedIn, setAlert, signUp }) => {
               </div>
 
               <div className="field">
-                <div classNams="ui checkbox">
-
-                  <input type="checkbox" name="update" value={checkBox} onClick={onCheckBox} />
+                <div className="ui checkbox">
+                  <input type="checkbox" name="update" value={checkBox} onClick={checkBox} />
                   <label>Show password</label>
                 </div>
               </div>
@@ -95,12 +94,6 @@ const Signup = ({ isSignedIn, setAlert, signUp }) => {
               <a className="ui fluid large  red button google" href="http://localhost:5000/auth/google">  <i className="google icon"></i>
       Google Login</a>
             </div>
-
-
-
-
-
-
 
           </form>
 

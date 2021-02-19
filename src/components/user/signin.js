@@ -110,11 +110,13 @@ class Signin extends Component {
                 <Alert />
                 <button className="ui fluid large teal submit button">Login</button>
                 <hr />
-                <a className="ui fluid large  red button google" href="http://localhost:5000/auth/google">  <i className="google icon"></i>
-      Google Login</a>
+                {/* <a className="ui fluid large  red button google" href="http://localhost:5000/auth/google"> */}
+                <a className="ui fluid large  red button google" href="https://yim-kospi-v2.herokuapp.com/auth/google">
+                  <i className="google icon"></i>
+                Google Login
+                </a>
 
               </div>
-
 
             </form>
 

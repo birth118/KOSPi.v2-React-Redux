@@ -76,7 +76,7 @@ const Update = ({ match, setAlert }) => {
           <td>{transaction.price}</td>
           <td>{transaction.amount}</td>
           <td>{digitConv(transaction.profit, 1)}</td>
-          <td>{digitConv(transaction.profitPercent, 2)}%</td>
+          <td>{digitConv(transaction.profitPercent * 100, 2)}%</td>
           <td>{transaction.comment.substring(0, 20)}</td>
 
 

@@ -32,15 +32,15 @@ export const TransactAll = ({ match }) => {
           <td> {new Date(transaction.createdAt).toLocaleDateString('en-US')}</td>
           <td>{transaction.buyOrSell}</td>
           <td>{transaction.companyName}</td>
-          <td>{transaction.price}</td>
+          <td>{digitConv(transaction.price, 1)}</td>
           <td>{transaction.amount}</td>
           <td>{digitConv(transaction.price * transaction.amount, 1)}</td>
-          <td>{transaction.profitPercent !== 0 ? `${digitConv(transaction.profitPercent, 2)}%` : ''}</td>
-          <td>{transaction.kospi}</td>
+          <td style={transaction.profitPercent > 0 ? { color: 'red' } : { color: 'blue' }} >{transaction.profitPercent !== 0 && `${digitConv(transaction.profitPercent * 100, 2)}%`}</td>
+          <td>{digitConv(transaction.kospi, 2)}</td>
           <td>{transaction.comment.substring(0, 20)}</td>
 
 
-        </tr>
+        </tr >
 
       )
     })

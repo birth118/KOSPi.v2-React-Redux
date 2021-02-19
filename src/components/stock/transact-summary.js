@@ -44,11 +44,9 @@ export const TransactSummary = ({ stockcode }) => {
             <tr><td>보유수</td><td className="right aligned">{stock.holdings}</td></tr>
             <tr><td>평단가</td><td className="right aligned">{stock.currency === Currency.KRW ? digitConv(stock.avgBuyingPrice, 1) : digitConv(stock.avgBuyingPrice, 2)}</td></tr>
             <tr><td style={stock.currentPrice === 0 ? { 'color': 'red' } : null} >현시가</td>
-
               <td style={stock.currentPrice === 0 ? { 'color': 'red' } : null} className="right aligned">{stock.currency === Currency.KRW ? digitConv(stock.currentPrice, 1) : digitConv(stock.currentPrice, 2)}</td>
-
             </tr>
-            <tr><td>수익률</td><td className="right aligned">{digitConv(stock.currentPrice / stock.avgBuyingPrice, 2)}%</td></tr>
+            <tr><td>수익률</td><td className="right aligned">{digitConv((stock.currentPrice / stock.avgBuyingPrice - 1) * 100, 2)}%</td></tr>
             <tr><td>평균 PER</td><td className="right aligned">{stock.avgPER}</td></tr>
             <tr><td>평균 PBR</td><td className="right aligned">{stock.avgPBR}</td></tr>
             <tr><td>내재가치</td><td className="right aligned">{stock.intrinsic}</td></tr>
